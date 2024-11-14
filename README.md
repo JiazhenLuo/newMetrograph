@@ -4,8 +4,7 @@ This project is a ReactJS-based web application for browsing movie information i
 
 
 ## Interface
-![alt text](renderImages/2.jpg)
-![alt text](renderImages/1.jpg)
+![alt text](renderImages/3.jpg)
 ## Features
 
 - **Responsive UI**: Uses React components to create a dynamic and responsive user interface.
