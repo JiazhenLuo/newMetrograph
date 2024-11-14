@@ -2,6 +2,10 @@
 
 This project is a ReactJS-based web application for browsing movie information in Metrograph, November, 2024. The application features an interactive interface that allows users to view summaries of movies in a card format and access detailed movie information along with ticket purchase options.
 
+
+## Interface
+![alt text](renderImages/2.jpg)
+![alt text](renderImages/1.jpg)
 ## Features
 
 - **Responsive UI**: Uses React components to create a dynamic and responsive user interface.
