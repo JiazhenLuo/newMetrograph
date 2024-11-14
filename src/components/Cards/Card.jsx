@@ -4,7 +4,9 @@ function Card(props) {
     console.log()
     return (
             <div className="card" onClick={props.onClick}>
-            <img className="card-image" src={`${props.img}`} alt={props.title} />
+            {/* <img className="card-image" src={`${props.img}`} alt={props.title} /> */}
+            <img className="card-image" src={props.img} alt={props.title} />
+
             <div className="card-content">
                 <h2 className="card-title">{props.title}</h2>
                 <div className="card-details">
