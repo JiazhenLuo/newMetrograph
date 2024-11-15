@@ -29,7 +29,7 @@ Make sure you have [Node.js](https://nodejs.org/) and npm installed on your mach
 
 1. Clone this repository:
    
-    `   git clone < https://github.com/JiazhenLuo/whatsgoodinMetrograph.git>`
+    `git clone < https://github.com/JiazhenLuo/whatsgoodinMetrograph.git>`
 
 2.	Navigate to the project directory:
 
