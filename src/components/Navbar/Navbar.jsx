@@ -11,7 +11,7 @@ const navbar = () => {
           </div>
 
           <div className="month">
-            <p>November_2024</p>
+            <p>April_2025</p>
           </div>
         </div>
 
