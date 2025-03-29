@@ -94,7 +94,7 @@ body {
 
 @media screen and (max-width: 1000px) {
   .filmlist-container {
-    padding: 2vw;
+    padding: 1vw;
     width: 100%;
     border-right: none;
     border-bottom: 1px solid #ddd;
@@ -116,7 +116,7 @@ body {
 
   .filmlist-container {
     width: 100%;
-    padding: 4vw;
+    padding: 2vw;
     border-right: none;
     border-bottom: 1px solid #ddd;
   }

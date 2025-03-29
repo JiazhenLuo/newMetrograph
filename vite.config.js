@@ -4,5 +4,12 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/whatsgoodinMetrograph"
+  // 只在生产环境使用base前缀，开发环境使用根路径
+  base: process.env.NODE_ENV === 'production' ? "/whatsgoodinMetrograph" : "/",
+  server: {
+    fs: {
+      // 允许访问项目根目录以外的文件
+      allow: ['..']
+    }
+  }
 })

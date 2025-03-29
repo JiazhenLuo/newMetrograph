@@ -1,11 +1,16 @@
 import React from "react";
 import "./MovieDetails.css";
+import ScreentimeDropdown from "../ScreentimeDropdown";
+import { isAllSoldOut } from "../../utils/formatScreenings";
 
 function MovieDetails({ movie }) {
   console.log("Selected Movie in Details:", movie);
   if (!movie) {
     return <p id="placeholder">Please select a movie to see the details.</p>;
   }
+
+  // 检查电影是否全部售罄
+  const allSoldOut = isAllSoldOut(movie.screenings || []);
 
   return (
     <>
@@ -21,7 +26,7 @@ function MovieDetails({ movie }) {
 
           <div className="time">
             <div className="empty"></div>
-            <div className="time-Info">{movie.screenTime}
+            <div className="time-Info">{movie.year + "/" + movie.runtime}
             </div>
           </div>
 
@@ -32,20 +37,26 @@ function MovieDetails({ movie }) {
 
           <div className="description">
             <div className="description-Text">Description:</div>
-            <div className="description-Info">{movie.Description}</div>
+            <div className="description-Info">{movie.synopsis}</div>
           </div>
 
           <div className="screentime">
             <div className="screentime-Text">Screen Time:</div>
-            <div className="screentime-Info">{movie.time}</div>
+            <ScreentimeDropdown screenings={movie.screenings || []} />
           </div>
 
         </div>
         <div className="poster-Container">
-          <img src={movie.poster} alt={movie.title} className="details-image" />
-          <button className="buy-button">
-            <a href={movie.link} target="_blank" rel="noopener noreferrer">
-              Buy Ticket
+          <img src={movie.poster_url} alt={movie.title} className="details-image" />
+          <button className={`buy-button ${allSoldOut ? 'sold-out' : ''}`}>
+            <a 
+              href={allSoldOut ? '#' : (movie.link || movie.detail_url || '#')}
+              target={allSoldOut ? '_self' : '_blank'} 
+              rel={allSoldOut ? '' : 'noopener noreferrer'}
+              onClick={allSoldOut ? (e) => e.preventDefault() : undefined}
+              className={allSoldOut ? 'sold-out' : ''}
+            >
+              {allSoldOut ? 'Sold Out' : 'Buy Ticket'}
             </a>
           </button>
         </div>
